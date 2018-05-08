@@ -1,0 +1,18 @@
+SELECT  OBJECT_SCHEMA_NAME(T.[object_id], DB_ID()) AS [架构名] ,
+        T.[name] AS [表名] ,
+        AC.[name] AS [列名] ,
+        TY.[name] AS [系统数据类型] ,
+ AC.[max_length] [最大长度],
+        TY.is_user_defined AS [是否用户自定义类型],--1 = 用户定义类型,0 = SQL Server 系统数据类型
+        AC.[precision] [精确度],--如果列包含的是数值，则为该列的精度；否则为0
+        AC.[scale] [数值范围],--如果列包含的是数值，则为列的小数位数；否则为0
+        AC.[is_nullable] [是否允许为空],
+        AC.[is_ansi_padded][是否使用ANSI_PADDING]--1 = 如果列为字符、二进制或变量类型，则该列使用ANSI_PADDING ON 行为
+FROM    sys.[tables] AS T
+        INNER JOIN sys.[all_columns] AC ON T.[object_id] = AC.[object_id]
+        INNER JOIN sys.[types] TY ON AC.[system_type_id] = TY.[system_type_id]
+                                     AND AC.[user_type_id] = TY.[user_type_id]
+WHERE   T.[is_ms_shipped] = 0 and
+	T.[name] ='up_def'  ----去掉这个是查询所有的表
+ORDER BY T.[name] ,
+        AC.[column_id]
