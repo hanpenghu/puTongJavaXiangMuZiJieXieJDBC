@@ -3,9 +3,7 @@ package com.hanhan.progject.dbconfig;
 import com.hanhan.progject.hanhan.p;
 
 import java.sql.*;
-
 public class ConA {
-
 
     //mysql的
 //    jdbc.driver=com.mysql.jdbc.Driver
@@ -17,8 +15,12 @@ public class ConA {
         p.p("-------------------------------------------------------");
         p.p(con);
         p.p("-------------------------------------------------------");
+        closeAll(null,null,con);
 
     }
+
+
+
     public static Connection getCon() throws ClassNotFoundException, SQLException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         String url = "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=DB_LZ17";
