@@ -16,11 +16,16 @@ public interface pI {
      String emailPattern2 =
             "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
 
-	List<String>imgSufixs=Arrays.asList(".jpg",".jpeg",".png",".bmp",".gif"
-			,".jpeg2000",".JPG",".JPEG",".PNG",".BMP",".GIF",".JPEG2000");
+
 
      String jpeg=".jpeg";
      String jpg="jpg";
+
+     List<String>imgSufixs=Arrays.asList(".jpg",".jpeg",".png",".bmp",".gif"
+			 ,".jpeg2000",".JPG",".JPEG",".PNG",".BMP",".GIF",".JPEG2000");
+
+     String sqlServerDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
+     String mysqlDriver="com.mysql.jdbc.Driver";
      String noExceptionSign ="《没有异常》";
      String knownExceptionSign ="《已知异常》";
      String unKnownExceptionSign ="《未知异常》";

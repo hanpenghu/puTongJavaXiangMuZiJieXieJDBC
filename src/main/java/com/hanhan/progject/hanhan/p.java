@@ -10,13 +10,11 @@ import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -2715,6 +2713,27 @@ public static Object StringTypeSpace2Null(Object o) throws IllegalAccessExceptio
 //        p.p(p.gp().sad(p.dexhx).sad(p.strValeOf(isInteger(null))).sad(p.dexhx).gad());
 //    }
 
+    public static Connection getCon(String driver,String ip,String port
+            ,String dbType,String dbName,String usr,String pwd)
+            throws ClassNotFoundException, SQLException {
+//        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        String url = "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=DB_LZ17";
+        if("sqlserver".equals(dbType)){
+            url="jdbc:sqlserver://"+ip+":"+port+";DatabaseName="+dbName;
+        }else if("mysql".equals(dbType)){
+            url="jdbc:mysql://"+ip+":"+port+"/"+dbName+"?useUnicode=true&characterEncoding=utf-8";
+        }
+//        //mydb为数据库
+//        String user = "sa";
+//        String password = "root";
+        Class.forName(driver);
+        Connection conn = DriverManager.getConnection(url, usr, pwd);
+        if (p.empty(conn)) {
+            return null;
+        } else {
+            return conn;
+        }
+    }
 
     public static void conClose(Connection c) throws SQLException {
         if (p.notEmpty(c)) {
