@@ -1,4 +1,4 @@
-package com.hanhan.progject.dbconfig;
+package com.hanhan.progject.projectA.dbconfig;
 
 import com.hanhan.progject.hanhan.p;
 
