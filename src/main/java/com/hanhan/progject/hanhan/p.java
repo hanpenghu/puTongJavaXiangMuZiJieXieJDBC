@@ -3128,7 +3128,15 @@ public static Object StringTypeSpace2Null(Object o) throws IllegalAccessExceptio
         return s;
     }
 
+    //无法得到springboot内部的src目录,但是可以得到传统java main和java web项目的目录
+    //其实这个也可以用于win,因为前面多个/也可以读到路径,
+    public static String srcPathLinux(){
+        //得到的很可能是这种路径
+        //          /E:/1/work_space/luxclub_jeesite/out/production/luxclub_jeesite/
+        String s= p.class.getResource("/").getPath();
 
+        return s;
+    }
 
 
     /**
