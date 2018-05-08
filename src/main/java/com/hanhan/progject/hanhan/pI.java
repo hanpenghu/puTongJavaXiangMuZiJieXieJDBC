@@ -16,7 +16,8 @@ public interface pI {
      String emailPattern2 =
             "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
 
-
+	List<String>imgSufixs=Arrays.asList(".jpg",".jpeg",".png",".bmp",".gif"
+			,".jpeg2000",".JPG",".JPEG",".PNG",".BMP",".GIF",".JPEG2000");
 
      String jpeg=".jpeg";
      String jpg="jpg";
