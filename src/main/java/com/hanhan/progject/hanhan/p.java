@@ -2713,15 +2713,18 @@ public static Object StringTypeSpace2Null(Object o) throws IllegalAccessExceptio
 //        p.p(p.gp().sad(p.dexhx).sad(p.strValeOf(isInteger(null))).sad(p.dexhx).gad());
 //    }
 
-    public static Connection getCon(String driver,String ip,String port
+    public static Connection getCon(String ip,String port
             ,String dbType,String dbName,String usr,String pwd)
             throws ClassNotFoundException, SQLException {
 //        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         String url = "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=DB_LZ17";
+        String driver="";
         if("sqlserver".equals(dbType)){
             url="jdbc:sqlserver://"+ip+":"+port+";DatabaseName="+dbName;
+            driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
         }else if("mysql".equals(dbType)){
             url="jdbc:mysql://"+ip+":"+port+"/"+dbName+"?useUnicode=true&characterEncoding=utf-8";
+            driver="com.mysql.jdbc.Driver";
         }
 //        //mydb为数据库
 //        String user = "sa";

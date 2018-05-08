@@ -24,6 +24,8 @@ public interface pI {
      List<String>imgSufixs=Arrays.asList(".jpg",".jpeg",".png",".bmp",".gif"
 			 ,".jpeg2000",".JPG",".JPEG",".PNG",".BMP",".GIF",".JPEG2000");
 
+     String dbTypeMysql="mysql";
+     String dbTypeSqlserver="sqlserver";
      String sqlServerDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
      String mysqlDriver="com.mysql.jdbc.Driver";
      String noExceptionSign ="《没有异常》";
