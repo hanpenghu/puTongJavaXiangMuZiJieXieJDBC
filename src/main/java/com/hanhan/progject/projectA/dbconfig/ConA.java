@@ -10,14 +10,14 @@ public class ConA {
 //    jdbc.url=jdbc:mysql://47.98.45.100:3306/luxclub?useUnicode=true&characterEncoding=utf-8
 //    jdbc.username=juhe
 //    jdbc.password=root
-    public static void main(String[]args) throws SQLException, ClassNotFoundException {
-        Connection con = getCon();
-        p.p("-------------------------------------------------------");
-        p.p(con);
-        p.p("-------------------------------------------------------");
-        closeAll(null,null,con);
-
-    }
+//    public static void main(String[]args) throws SQLException, ClassNotFoundException {
+//        Connection con = getCon();
+//        p.p("-------------------------------------------------------");
+//        p.p(con);
+//        p.p("-------------------------------------------------------");
+//        closeAll(null,null,con);
+//
+//    }
 
 
 

@@ -10,6 +10,10 @@ import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -2710,6 +2714,55 @@ public static Object StringTypeSpace2Null(Object o) throws IllegalAccessExceptio
 //        //_________________false_________________
 //        p.p(p.gp().sad(p.dexhx).sad(p.strValeOf(isInteger(null))).sad(p.dexhx).gad());
 //    }
+
+
+    public static void conClose(Connection c) throws SQLException {
+        if (p.notEmpty(c)) {
+            c.close();
+        } else {
+
+        }
+
+    }
+
+    public static void resultSetClose(ResultSet c) throws SQLException {
+        if (p.notEmpty(c)) {
+            c.close();
+        } else {
+
+        }
+
+    }
+
+    public static void preparedStatementClose(PreparedStatement c) throws SQLException {
+        if (p.notEmpty(c)) {
+            c.close();
+        } else {
+
+        }
+
+    }
+
+
+    public static void closeAll(Connection c,PreparedStatement p1, ResultSet r) {
+        try {
+            p.preparedStatementClose(p1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            p.resultSetClose(r);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            p.conClose(c);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
      *将字符串写入文本,注意会覆盖原来的文本内容
