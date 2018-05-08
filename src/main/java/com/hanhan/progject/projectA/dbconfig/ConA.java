@@ -22,12 +22,7 @@ public class ConA {
 
 
     public static Connection getCon() throws ClassNotFoundException, SQLException {
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        String url = "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=DB_LZ17";
-        //mydb为数据库
-        String user = "sa";
-        String password = "root";
-        Connection conn = DriverManager.getConnection(url, user, password);
+      Connection  conn= p.getCon(p.ip127,p.port1433,p.dbTypeSqlserver,"DB_LZ17","sa","root");
         if (p.empty(conn)) {
             return null;
         } else {

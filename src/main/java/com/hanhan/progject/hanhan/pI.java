@@ -24,6 +24,9 @@ public interface pI {
      List<String>imgSufixs=Arrays.asList(".jpg",".jpeg",".png",".bmp",".gif"
 			 ,".jpeg2000",".JPG",".JPEG",".PNG",".BMP",".GIF",".JPEG2000");
 
+     String ip127="127.0.0.1";
+     String port1433="1433";
+     String port3306="3306";
      String dbTypeMysql="mysql";
      String dbTypeSqlserver="sqlserver";
      String sqlServerDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
