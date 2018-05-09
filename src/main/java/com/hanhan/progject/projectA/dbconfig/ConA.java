@@ -19,11 +19,13 @@ public class ConA {
 //
 //    }
 
+public void f(){
 
+}
 
     public static Connection getCon() throws ClassNotFoundException, SQLException {
       Connection  conn= p.getCon(p.ip127,p.port1433,p.dbTypeSqlserver,"DB_LZ17","sa","root");
-        if (p.empty(conn)) {
+        if (null==conn) {
             return null;
         } else {
             return conn;
@@ -31,7 +33,7 @@ public class ConA {
     }
 
     public static void conClose(Connection c) throws SQLException {
-        if (p.notEmpty(c)) {
+        if (null!=c) {
             c.close();
         } else {
 
@@ -40,7 +42,7 @@ public class ConA {
     }
 
     public static void resultSetClose(ResultSet c) throws SQLException {
-        if (p.notEmpty(c)) {
+        if (null!=c) {
             c.close();
         } else {
 
@@ -49,7 +51,7 @@ public class ConA {
     }
 
     public static void preparedStatementClose(PreparedStatement c) throws SQLException {
-        if (p.notEmpty(c)) {
+        if (null!=c) {
             c.close();
         } else {
 
